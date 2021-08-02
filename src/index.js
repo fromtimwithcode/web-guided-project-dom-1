@@ -72,10 +72,18 @@ blogLink.textContent = 'Blog';
 blogLink.href = '#';
 
 document.querySelector('nav').appendChild(blogLink);
+
 // 👉 7- Making a copy of the card and appending it to the card group
 // DOM nodes can only exist in one spot in the DOM
 // We cannot append the same copy multiple times
+const secondCard = firstCard.cloneNode(true);
+document.querySelector('.card-group').appendChild(secondCard);
 
+// const data = {
+//     "contact": {
+//         "contact-heading: "Contact"
+//     }
+// }
 
 // 👉 8- Removing an existing element and putting it back [STRETCH if time allows]
 

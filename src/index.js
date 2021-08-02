@@ -3,25 +3,45 @@
 //  Newer: querySelector, querySelectorAll
 //  Select the following single elements from the div.card
 
+// getElementById [OLD]
+const nav = document.getElementById('mainNav');
+
+// getElementsByClassName [OLD]
+const navItems = document.getElementsByClassName('menu-item');
+
+// [NEW] querySelector + querySelectorAll
+
 // A- finding across the entire DOM
-const header = null
-const logoTitle = null
-const firstCard = null
+const header = document.querySelector('header');
+const logoTitle = document.querySelector('#logoTitle');
+logoTitle.textContent = "Tim's Profile";
+
+const firstCard = document.querySelector('.card:nth-of-type(1)');
+
+
 // B- finding within one particular element
-const imageFirstCard = null
-const titleFirstCard = null
-const subtitleFirstCard = null
-const textFirstCard = null
+const imageFirstCard = document.querySelector('.card img');
+const titleFirstCard = document.querySelector('.card-title');
+const subtitleFirstCard = document.querySelector('.card-subtitle');
+const textFirstCard = document.querySelector('.card-text');
 // C- traversing with dot notation
-const link1FirstCard = null
-const link2FirstCard = null
+const link1FirstCard = textFirstCard.nextElementSibling;
+console.log(link1FirstCard);
+const link2FirstCard = link1FirstCard.nextElementSibling;
 
 
 // 👉 2- Finding collections of elements in the DOM
 // A- Find all the anchor tags inside the nav element
+const links = document.querySelectorAll('nav a');
+console.log(links);
 // B- Loop over the links and console.log their text content
+links.forEach(link => console.log(link.textContent));
 // C- Turn the collection of links into a real array
+const linksArray = Array.from(links);
+console.log(linksArray);
 // D- Use .filter to find the anchor tag with the textContent of "Home"
+const foundElement = linksArray.find(link => link.textContent === 'Home');
+console.log(foundElement);
 
 
 // 👉 3- Changing an element's text content
